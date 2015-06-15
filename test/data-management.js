@@ -4,7 +4,7 @@ const
 , sinon = require('sinon')
 , expect = chai.expect
 chai.use(require('sinon-chai'));
-chai.config.truncateThreshold = 0;
+chai.config.truncateThreshold = 100;
 // Data
 const
   courses = require('../data/courses')
@@ -30,10 +30,10 @@ describe('Data Management', function(){
     it('should return courses with the requested skills', function(){
       const randomSkills = _.sample(skills, 2);
       expect(
-        findCoursesBySkills(_.pluck('name'))
+        findCoursesBySkills(_.pluck(randomSkills, 'name'))
       ).to.eql(
         _.filter(courses, function(course){
-          return _.union(course.skills, _.pluck(randomSkills, 'id')).length == 2
+          return _.intersection(course.skills, _.pluck(randomSkills, 'id')).length
         })
       )
     })

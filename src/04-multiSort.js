@@ -21,5 +21,5 @@ function getSortingOption(field){
 function sort([by]) -> sortedData
  */
 module.exports = function multiSort(by){
-  // return _.sortByAll(courses, _.map(by, getSortingOption));
+  return _.sortByAll(courses, _.map(by, getSortingOption));
 }

@@ -9,7 +9,7 @@ const sortedLangs = _.sortBy(languages, function(language){
 function groupCourseBySuitableLanguage(language) -> [[courses]]
  */
 module.exports = function getGroupedCourses(){
-  // return _.map(sortedLangs, function(lang){
-  //   return _.where(courses, { languageId: lang.id })
-  // })
+  return _.map(sortedLangs, function(lang){
+    return _.where(courses, { languageId: lang.id })
+  })
 }

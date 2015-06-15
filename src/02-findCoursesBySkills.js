@@ -15,7 +15,7 @@ function getSkillIds(skillsNames){
 function findCoursesBySkills([skills]) -> courses
  */
 module.exports = function findCoursesBySkills(skillsNames){
-  // return _.filter(courses, function(course){
-  //   return !_(getSkillIds(skillsNames)).intersection(course.skills).isEmpty()
-  // })
+  return _.filter(courses, function(course){
+    return !_(getSkillIds(skillsNames)).intersection(course.skills).isEmpty()
+  })
 }
