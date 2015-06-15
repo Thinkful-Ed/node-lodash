@@ -1,0 +1,21 @@
+{
+  "name": "lodash-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "lodash": "^3.9.3"
+  },
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "mocha": "^2.2.5",
+    "mocha-sinon": "^1.1.4",
+    "sinon": "^1.15.3",
+    "sinon-chai": "^2.8.0"
+  },
+  "scripts": {
+    "test": "mocha --reporter nyan --ui bdd --bail --check-leaks"
+  },
+  "author": "",
+  "license": "ISC"
+}
