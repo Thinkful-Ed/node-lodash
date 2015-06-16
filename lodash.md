@@ -1,7 +1,7 @@
 ## Functional Programming with Lodash
 
-Level: Intermediate
-Time Estimate: 
+Level: Intermediate (and some Advanced)
+Time Estimate: 4h
 Topics: Functional styled JavaScript; Data management of Collections and Objects; Partial Application, Composition and Combinators
 
 ## Brief
@@ -21,11 +21,11 @@ After a chat with the lead architect, some unit tests were agreed on for functio
 
 ## Resources
 
-(https://egghead.io/lessons/core-javascript-introduction-to-lodash)[Lodash Intro Video] - A short video introducing lodash/underscore and giving an example of chaining.
+[Lodash Intro Video](https://egghead.io/lessons/core-javascript-introduction-to-lodash) - A short video introducing lodash/underscore and giving an example of chaining.
 
-(https://lodash.com/docs)[Lodash Documentation] - The fluffing lodash manual.
+[Lodash Documentation](https://lodash.com/docs) - The fluffing lodash manual.
 
-(https://leanpub.com/lodashcookbook/read)[Lodah Cookbook] - Free on-line book containing many tools and tricks you can use with the lodash library.
+[Lodash Cookbook](https://leanpub.com/lodashcookbook/read) - Free on-line book containing many techniques and tips for when working with the lodash library.
 
-(http://benalman.com/news/2012/09/partial-application-in-javascript/)[Partial Application and Composition] - Detailed article on partial application and composition methods in JavaScript.
+[Partial Application and Composition](http://benalman.com/news/2012/09/partial-application-in-javascript/) - Detailed article on partial application and composition methods in JavaScript.
 
