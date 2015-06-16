@@ -40,7 +40,7 @@ describe('Data Management', function(){
   });
 
   describe('Get Grouped Courses By Suitable Language', function(){
-    it('should return an array of ordered langs', function(){
+    it('should return an array of courses grouped by most suitable languages', function(){
       const sortedLangs = _.sortBy(languages, function(lang){
         return lang.demand + lang.enjoyment + lang.versatility;
       })
@@ -54,7 +54,7 @@ describe('Data Management', function(){
   });
 
   describe('Multi Sort',function(){
-    it('should sort the courses by fields',function(){
+    it('should sort the courses by multiple fields',function(){
       expect(
         multiSort(['name', 'status'])
       ).to.eql(

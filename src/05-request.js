@@ -1,16 +1,20 @@
 const _ = require('lodash');
 
-// Do not change, this is the request function used for testing
+// Do not change
+// this is the request function used for testing
 // makePublicRequester and makePrivateRequester should use this
 const request = function request(method, endpoint, data, params, headers){
   (request.send || _.noop)(method, endpoint, data, params, headers)
 }
 
+// Do not change
 // example paramsCb
 // makePublicRequester should use this
 function getDefaultParams(params){
   return _.defaults({}, params || {}, { bust: Date.now() })
 }
+
+// Do not change
 // example headersCb
 // makePublicRequester and makePrivateRequester should use this
 function getDefaultHeaders(headers){
@@ -18,6 +22,10 @@ function getDefaultHeaders(headers){
 }
 
 /**
+- expert
+function requestAdapter(request, method, ?paramsCb, ?headerCb)
+    -> function wrappedRequest(endpoint, data, parameters, headers)
+
  * Return a wrapped request function pre-bound with a method string and applying mutation functions to the parameters and headers of the request.
  *
  * @param  {Function} request - The request function to wrap
@@ -26,9 +34,6 @@ function getDefaultHeaders(headers){
  * @param  {Function} headerCb - A function that modifies the request headers
  *
  * @return {Function} - The wrapped request function
-
-function requestAdapter(request, method, ?paramsCb, ?headerCb)
-    -> function wrappedRequest(endpoint, data, parameters, headers)
 
 E.g.
 ```
@@ -43,25 +48,33 @@ myRequest('http://my-endpoint', null, { foo: 'bar' })
 // will make a request like so: "http://my-endpoint?bust=1232234&foo=bar"
 ```
  */
-const requestAdapter = _.noop;
+const requestAdapter = function(){
+  return _.noop
+};
 
 /*
-The second function is a new adapter used for making public request objects that have a bust parameter pre-filled for cache busting.
+- intermediate
+
+The second function is a new adapter used for making public request functions that have a `bust` parameter pre-filled for cache busting.
 
 The request function and paramsCb has been supplied for you (getDefaultParams).
 
 NB. Try to reuse the original requestAdapter along with `wrap`, `partial` or `bind`.
  */
-const makePublicRequester = _.noop;
+const makePublicRequester = function(){
+  return _.noop
+};
 
 /*
-The final function is again an adapter used for private requests, this time composing with the cache busted public request adapter as well as adding a default header of `Authorization`.
+The final function is again an adapter used for private requests, this time composing with the cache busted public request adapter as well as adding a default header of `Authorization` with a random key.
 
 The request function and headersCb has been supplied for you (getDefaultHeaders).
 
 NB. Try to reuse the original requestAdapter along with `wrap`, `partial` or `bind`.
  */
-const makePrivateRequester = _.noop;
+const makePrivateRequester = function(){
+  return _.noop
+};
 
 module.exports = {
   request: request,
