@@ -43,15 +43,7 @@ myRequest('http://my-endpoint', null, { foo: 'bar' })
 // will make a request like so: "http://my-endpoint?bust=1232234&foo=bar"
 ```
  */
-function requestAdapter(request, method, paramsCb, headerCb){
-  paramsCb = paramsCb || _.identity;
-  headerCb = headerCb || _.identity;
-  return function(endpoint, data, params, headers){
-    return _.partial(request, method)(
-      endpoint, data, paramsCb(params), headerCb(headers)
-    )
-  }
-}
+const requestAdapter = _.noop;
 
 /*
 The second function is a new adapter used for making public request objects that have a bust parameter pre-filled for cache busting.
@@ -60,9 +52,7 @@ The request function and paramsCb has been supplied for you (getDefaultParams).
 
 NB. Try to reuse the original requestAdapter along with `wrap`, `partial` or `bind`.
  */
-const makePublicRequester = _.bind(
-  requestAdapter, null, request, _, getDefaultParams
-)
+const makePublicRequester = _.noop;
 
 /*
 The final function is again an adapter used for private requests, this time composing with the cache busted public request adapter as well as adding a default header of `Authorization`.
@@ -71,9 +61,7 @@ The request function and headersCb has been supplied for you (getDefaultHeaders)
 
 NB. Try to reuse the original requestAdapter along with `wrap`, `partial` or `bind`.
  */
-const makePrivateRequester = _.bind(
-  requestAdapter, null, request, _, getDefaultParams, getDefaultHeaders
-)
+const makePrivateRequester = _.noop;
 
 module.exports = {
   request: request,

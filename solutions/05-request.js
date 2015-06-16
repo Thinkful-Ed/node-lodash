@@ -43,7 +43,7 @@ myRequest('http://my-endpoint', null, { foo: 'bar' })
 // will make a request like so: "http://my-endpoint?bust=1232234&foo=bar"
 ```
  */
-function requestAdapter(request, method, paramsCb, headerCb){
+const requestAdapter = function(request, method, paramsCb, headerCb){
   paramsCb = paramsCb || _.identity;
   headerCb = headerCb || _.identity;
   return function(endpoint, data, params, headers){

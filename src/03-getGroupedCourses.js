@@ -1,10 +1,8 @@
 const _ = require('lodash')
 const courses = require('../data/courses')
 const languages = require('../data/languages')
+const skills = require('../data/skills')
 
-const sortedLangs = _.sortBy(languages, function(language){
-  return language.demand + language.enjoyment + language.versatility;
-})
 /*
  - intermediate
 
@@ -14,7 +12,4 @@ This function must sort the languages by how suitable they are, suitability is d
 
  */
 module.exports = function getGroupedCourses(){
-  return _.map(sortedLangs, function(lang){
-    return _.where(courses, { languageId: lang.id })
-  })
 }
