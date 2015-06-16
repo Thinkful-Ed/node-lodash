@@ -6,7 +6,7 @@ const courses = require('../data/courses')
 
 function findCourseByName(name) -> course
 
-This function accepts a course name and returns the course with the matching name.
+This function accepts a course's name and returns the full course object with the matching name.
 
  */
 module.exports = function findCourseByName(name){
