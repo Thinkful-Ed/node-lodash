@@ -39,7 +39,7 @@ describe('Data Management', function(){
     })
   });
 
-  describe('Group Courses By Suitable Language', function(){
+  describe('Get Grouped Courses By Suitable Language', function(){
     it('should return an array of ordered langs', function(){
       const sortedLangs = _.sortBy(languages, function(lang){
         return lang.demand + lang.enjoyment + lang.versatility;

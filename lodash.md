@@ -1,79 +1,31 @@
-## Fast and Readable Functional Programming with Lodash
+## Functional Programming with Lodash
 
 Level: Intermediate
 Time Estimate: 
-Topics: 
-- Functional styled JavaScript
-- Data management of Collections and Objects
-- Composition and Combinators
-
-### blurb
-This project tasks you with practicing some of the functional programming library's most useful features, such as its collection methods (find, where, pluck, pick) and its function methods (throttle, debounce, delay, partial, wrap, once, bindAll).
-
-## External Material
-short -- 
-https://egghead.io/lessons/core-javascript-introduction-to-lodash
-bit more in depth --
-https://blog.codecentric.de/en/2013/01/functional-javascript-lo-dash-underscore-js-alternative/
-fantastic --
-https://leanpub.com/lodashcookbook/read
-book --
-https://books.google.co.uk/books?id=t-VrBgAAQBAJ&lpg=PA1&ots=8h36jCNRSl&dq=introduction%20to%20lodash.js&pg=PP1#v=onepage&q&f=false
-
-
-## Things
-
-- data manipulation is a vital part of many JavaScript systems
-    + filtering and sorting search results
-    + displaying analytical information about data
-    + manipulating collections of items
-    + parsing data
-
-- at it's heart - JS is functional language
-    + functions are first class
-- lodash embraces this to give a developer tools for writing clean, fast and effective code 
-- 
+Topics: Functional styled JavaScript; Data management of Collections and Objects; Partial Application, Composition and Combinators
 
 ## Brief
 
-Node:
-- Need to provide functions:
-    - search by 
-    - sorting courses by 2 columns at a time:
-        + name, suitability, level, demand, enjoyment, versatility, risk, interest
-    - filter by same options
-```js
-function findCourseByName(name) -> course
-function findCoursesBySkills([skills]) -> course
-function groupCoursesBySuitableLanguage(name) -> course
+It's the year 2046 and you are the lead JavaScript technician for a new start-up offering "on-line dating with programming languages". It's become a global sensation as people are looking to daily flirt with some code. Your service takes the user's personal interests and matches them up with specially moulded courses.
 
-function sort([by]) -> sortedData
-```
+After a chat with the lead architect, some unit tests were agreed on for functions you should write. The functions are divided into node data management and client side request builders. The data management functions will be used in the node server when responding to API requests. The client side request builders will be used for making those requests using one of the now 100 types of AJAX protocols.
 
-Client:
-    - two types of request builder functions
-```js
-function getDefaultParams(params){
-    return _.defaults({}, params || {}, {
-        bust: Date.now()
-    })
-}
-function getDefaultHeaders(headers){
-    return _.defaults({}, headers || {}, {
-        Authorization: Math.random()
-    })
-}
+## MileStones
 
-function makePublicRequester(method, getDefaultParams)
-    -> function request(endpoint, data, params={bust}, headers)
+1. Clone the repository containing a starter point and some unit tests.
+2. Install the project by running `npm install`.
+3. Go through the /src/ files starting with `01-*.js` and implement the functions one at a time by passing the tests.
+4. Keep running the test suite using `npm test` to see if your functions meet the requirements.
+5. Try to make the code as eloquent and functional as possible to keep your hipster stakeholders happy.
+6. Don't sneak peak at the solutions and if you do - try to implement the solutions in a different way!
 
-function makeAuthedRequester(method, getDefaultHeaders)
-    -> function request(endpoint, data, params, headers={Authorisation})
-```
+## Resources
 
-*scenarios*
-+ Thinkful
-    * date with a programming language
-        - type some personal interests
-        - shows some programming courses
+(https://egghead.io/lessons/core-javascript-introduction-to-lodash)[Lodash Intro Video] - A short video introducing lodash/underscore and giving an example of chaining.
+
+(https://lodash.com/docs)[Lodash Documentation] - The fluffing lodash manual.
+
+(https://leanpub.com/lodashcookbook/read)[Lodah Cookbook] - Free on-line book containing many tools and tricks you can use with the lodash library.
+
+(http://benalman.com/news/2012/09/partial-application-in-javascript/)[Partial Application and Composition] - Detailed article on partial application and composition methods in JavaScript.
 

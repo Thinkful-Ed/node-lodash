@@ -12,7 +12,12 @@ function getSkillIds(skillsNames){
           .value()
 }
 /*
-function findCoursesBySkills([skills]) -> courses
+- intermediate++
+
+function findCoursesBySkills([skillNamess]) -> [courses]
+
+This function accepts an array of skill names, it then returns an array of courses that offer any of the skills.
+
  */
 module.exports = function findCoursesBySkills(skillsNames){
   return _.filter(courses, function(course){
