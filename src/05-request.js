@@ -22,7 +22,8 @@ function getDefaultHeaders(headers){
 }
 
 /**
-- expert
+Level 5:
+
 function requestAdapter(request, method, ?paramsCb, ?headerCb)
     -> function wrappedRequest(endpoint, data, parameters, headers)
 
