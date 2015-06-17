@@ -8,9 +8,9 @@ Level 3:
 
 function getGroupedCourses() -> [[courses]]
 
-This function must sort the languages by suitability, measured by adding `demand`, `enjoyment`, and `versatility`. For each language, ordered by most suitable to least suitable, return an array of courses offering that language. Wrap these arrays (one for each language) into one outer array and return the said outer array.
- */
+This function should return an array of arrays. The outer array should contain a list of arrays with each one representing a programming language, with that list sorted by each language's suitability (more suitable first). Suitability is measured by adding `demand`, `enjoyment`, and `versatility`. The inner arrays should contain courses offering that language. In pseudocode: `return [firstLanguageArray, secondLanguageArray, thirdLanguageArray]` (it should work for any number of languages).
+*/
 
 module.exports = function getGroupedCourses(){
-	// Your code goes here
+	
 }
