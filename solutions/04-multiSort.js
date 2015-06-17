@@ -11,9 +11,11 @@ function getSortingOption(field){
     : function sortingOptionCallback(course){
         return ( field == 'skill' )
           ? _.find(skills, function(skill){
-            return _.includes(course.skills, skill.id)
-          })['name']
-          : _.find(languages, { id: course.languageId })[field];
+              return _.includes(course.skills, skill.id)
+            })['name']
+          : _.find(languages, {
+              id: course.languageId
+            })[field];
       }
 }
 

@@ -69,6 +69,16 @@ describe('Data Management', function(){
       expect(sortedCourseSkillIds).to.eql(
         _.intersection(sortedCourseSkillIds, _.pluck(sortedSkills, 'id'))
       )
+
+      const sortedLangsByEnjoymentIds = _(languages)
+                                      .sortBy('enjoyment')
+                                      .pluck('id')
+                                      .value();
+      const sortedCourseLandIds = _(multiSort(['enjoyment']))
+                                      .pluck('languageId')
+                                      .uniq()
+                                      .value();
+      expect(sortedCourseLandIds).to.eql(sortedLangsByEnjoymentIds)
     });
   });
 
