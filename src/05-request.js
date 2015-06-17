@@ -50,11 +50,12 @@ myRequest('http://my-endpoint', null, { foo: 'bar' })
 ```
  */
 const requestAdapter = function(){
+  // your code goes here
   return _.noop
 };
 
 /*
-- intermediate
+Level 6.1:
 
 The second function is a new adapter used for making public request functions that have a `bust` parameter pre-filled for cache busting.
 
@@ -63,10 +64,13 @@ The request function and paramsCb has been supplied for you (getDefaultParams).
 NB. Try to reuse the original requestAdapter along with `wrap`, `partial` or `bind`.
  */
 const makePublicRequester = function(){
+  // your code goes here
   return _.noop
 };
 
 /*
+Level 6.2:
+
 The final function is again an adapter used for private requests, this time composing with the cache busted public request adapter as well as adding a default header of `Authorization` with a random key.
 
 The request function and headersCb has been supplied for you (getDefaultHeaders).
@@ -74,6 +78,7 @@ The request function and headersCb has been supplied for you (getDefaultHeaders)
 NB. Try to reuse the original requestAdapter along with `wrap`, `partial` or `bind`.
  */
 const makePrivateRequester = function(){
+  // your code goes here
   return _.noop
 };
 
@@ -84,7 +89,7 @@ module.exports = {
   // builders
   makePublicRequester: makePublicRequester,
   makePrivateRequester: makePrivateRequester,
-  // prebound
+  // pre-bound
   throttledPublicGet: _.throttle(makePublicRequester('GET')),
   privatePost: makePrivateRequester('POST'),
 };

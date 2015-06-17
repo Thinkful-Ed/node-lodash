@@ -5,14 +5,15 @@ const languages = require('../data/languages')
 const sortedLangs = _.sortBy(languages, function(language){
   return language.demand + language.enjoyment + language.versatility;
 })
+
 /*
- - intermediate
+Level 3:
 
 function getGroupedCourses() -> [[courses]]
 
-This function must sort the languages by how suitable they are, suitability is determined by adding the `demand`, `enjoyment` and `versatility` together. For each of the languages, ordered by most suitable first, return an array of courses offering that language. Wrap these arrays (one for each language) into one outer array and return the said outer array.
+This function should return an array of arrays. The outer array should contain a list of arrays with each one representing a programming language, with that list sorted by each language's suitability (more suitable first). Suitability is measured by adding `demand`, `enjoyment`, and `versatility`. The inner arrays should contain courses offering that language. In pseudocode: `return [firstLanguageArray, secondLanguageArray, thirdLanguageArray]` (it should work for any number of languages).
+*/
 
- */
 module.exports = function getGroupedCourses(){
   return _.map(sortedLangs, function(lang){
     return _.where(courses, { languageId: lang.id })

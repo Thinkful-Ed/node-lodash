@@ -11,14 +11,15 @@ function getSkillIds(skillsNames){
           .pluck('id')
           .value()
 }
+
 /*
-- intermediate++
+Level 2:
 
 function findCoursesBySkills([skillNamess]) -> [courses]
 
-This function accepts an array of skill names, it then returns an array of courses that offer any of the skills.
-
+Complete the function below to accept an array of skill names and return an array of courses that cover any of those skills.
  */
+
 module.exports = function findCoursesBySkills(skillsNames){
   return _.filter(courses, function(course){
     return !_(getSkillIds(skillsNames)).intersection(course.skills).isEmpty()

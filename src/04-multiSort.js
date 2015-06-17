@@ -9,8 +9,9 @@ Level 4:
 function multiSort([fields]) -> [sortedCourses]
 
 This function accepts an array of any of the following strings:
-- From courses: `name`, `status`, `suitability`, `created_at`, `level`,
-- From languages: `demand`, `enjoyment`, `versatility`, `user_status`, or `skill`.
+- From courses: `name`, `status`, `suitability`, `created_at`, `level`
+- From languages: `demand`, `enjoyment`, `versatility`, `user_status`
+- From skills: `skill`
 
 With this array of strings, it returns the courses sorted by the associated fields, applying the first sorting field and then 'sub-sorting' by the second field, and so on...
 
