@@ -3,7 +3,7 @@ const courses = require('../data/courses')
 const languages = require('../data/languages')
 
 const sortedLangs = _.sortBy(languages, function(language){
-  return language.demand + language.enjoyment + language.versatility;
+  return _(language).pick(['demand', 'enjoyment', 'versatility']).sum()
 })
 
 /*
